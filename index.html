@@ -17111,33 +17111,50 @@ this, it will only impact matches that are really close and hopefully push them 
 </div>
 </div>
 
-</div>When we add in the regional difference, our results change for the group stage by a little.<br>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>When we add in the regional difference, our results change for the group stage by a little.<br>
 In group A, it now ranks them 3,4,2,1 instead of 4,3,2,1. So it's a little better, but not by much.<br>
-In group C, it now ranks them 3,1,2,4 instead of 3,4,1,2. So again it's a little better.<br>
+In group C, it now ranks them 3,1,2,4 instead of 3,4,1,2. So again it's a little better.<br></p>
+<p>If we had more time we would definitely look into grabbing some international data to train the model on regional difference
+and add that in as a factor, because it would make the model slightly better.</p>
+<p>Now that we finished the group stage, we will look at the elimination bracket given the starting teams in the bracket and try to predict wins using our new model with strength of schedule included. The first round bracket looks like this:</p>
 
-If we had more time we would definitely look into grabbing some international data to train the model on regional difference
-and add that in as a factor, because it would make the model slightly better.
-
-Now that we finished the group stage, we will look at the elimination bracket given the starting teams in the bracket and try to predict wins using our new model with strength of schedule included. The first round bracket looks like this:
-
-Africa Freecs --
-                 >---Winner---
-Cloud 9 --------             
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Africa Freecs --</span>
+<span class="c1">#                  &gt;---Winner---</span>
+<span class="c1"># Cloud 9 --------             </span>
                          
-Fnatic ---------                                  
-                >---Winner---                      
-EDG ------------                                   
+<span class="c1"># Fnatic ---------                                  </span>
+<span class="c1">#                 &gt;---Winner---                      </span>
+<span class="c1"># EDG ------------                                   </span>
                                          
-KT Rolster -----                                   
-                 >---Winner---                      
- Invictus Gaming-                                  
+<span class="c1"># KT Rolster -----                                   </span>
+<span class="c1">#                  &gt;---Winner---                      </span>
+<span class="c1">#  Invictus Gaming-                                  </span>
                               
-Royal Never G.--             
-                 >----Winner---
-G2 Esports -----
+<span class="c1"># Royal Never G.--             </span>
+<span class="c1">#                  &gt;----Winner---</span>
+<span class="c1"># G2 Esports -----</span>
 
 
-These are the results our model gives:
+<span class="c1"># These are the results our model gives:</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[38]:</div>
@@ -17268,23 +17285,36 @@ between were in the 13-30 range.</p>
 
 </div>
 </div>
-</div>Africa Freecs --
-                 >---Cloud 9---
-Cloud 9 --------               ----------
-                                         >---Winner
-Fnatic ---------             ------------                     
-                >---Fnatic---                      
-EDG ------------                                   
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Africa Freecs --</span>
+<span class="c1">#                  &gt;---Cloud 9---</span>
+<span class="c1"># Cloud 9 --------               ----------</span>
+<span class="c1">#                                          &gt;---Winner</span>
+<span class="c1"># Fnatic ---------             ------------                     </span>
+<span class="c1">#                 &gt;---Fnatic---                      </span>
+<span class="c1"># EDG ------------                                   </span>
                                          
-KT Rolster -----                                   
-                 >---Invictus Gaming---                      
- Invictus Gaming-                     ---             
-                                         >---Winner---
-Royal Never G.--                      ---
-                 >--- Royal Never G.---
-G2 Esports -----
+<span class="c1"># KT Rolster -----                                   </span>
+<span class="c1">#                  &gt;---Invictus Gaming---                      </span>
+<span class="c1">#  Invictus Gaming-                     ---             </span>
+<span class="c1">#                                          &gt;---Winner---</span>
+<span class="c1"># Royal Never G.--                      ---</span>
+<span class="c1">#                  &gt;--- Royal Never G.---</span>
+<span class="c1"># G2 Esports -----</span>
 
-These are the results our model gives:
+<span class="c1"># These are the results our model gives:</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[40]:</div>
@@ -17408,37 +17438,6 @@ correct. However, it is important to note our model had Cloud9 winning by only 8
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Elimination Round Results:</span>
-<span class="c1"># The number between the teams is the margin of victory predicted by out bot. </span>
-<span class="c1"># We took the absolute value to normalize it.</span>
-
-<span class="c1"># Africa Freecs --</span>
-<span class="c1">#     16.9        &gt;---Cloud9---</span>
-<span class="c1"># Cloud 9 --------             &gt;</span>
-<span class="c1">#                      10.2    &gt;-------Cloud9--------</span>
-<span class="c1"># Fnatic ---------             &gt;                     &gt;</span>
-<span class="c1">#     5.5         &gt;---Fnatic---                      &gt;</span>
-<span class="c1"># EDG ------------                                   &gt;</span>
-<span class="c1">#                                         14         &gt;---Invictus Gaming !!</span>
-<span class="c1"># KT Rolster -----                                   &gt;</span>
-<span class="c1">#     28.7        &gt;---Inv. G---                      &gt;</span>
-<span class="c1"># Invictus Gaming-             &gt;                     &gt;</span>
-<span class="c1">#                      19.2    &gt;---Invictus Gaming---</span>
-<span class="c1"># Royal Never G.--             &gt;</span>
-<span class="c1">#      4          &gt;----RNG-----</span>
-<span class="c1"># G2 Esports -----</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -17502,21 +17501,34 @@ margin compared to some of the numbers we've been getting, and that makes sense 
 
 </div>
 </div>
-</div>Flash Wolves ---
-    18.9        >---Flash W---
-Royal Never G.--             >
-                     .3      >---Invictus Gaming---
-Invictus Gaming-             >                     >
-    29.7        >---Inv. G---                      >
-KT Rolster -----                                   >
-                                      1.8          >---Invictus Gaming
-Team Liquid ----                                   >
-    .16         >---Liquid---                      >
-Fnatic ---------             >                     >
-                     24.2    >-----PV Buffalo------
-Cloud 9 --------             >
-    16.2        >-PV Buffalo-
-PV Buffalo -----
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Flash Wolves ---</span>
+<span class="c1">#     18.9        &gt;---Flash W---</span>
+<span class="c1"># Royal Never G.--             &gt;</span>
+<span class="c1">#                      .3      &gt;---Invictus Gaming---</span>
+<span class="c1"># Invictus Gaming-             &gt;                     &gt;</span>
+<span class="c1">#     29.7        &gt;---Inv. G---                      &gt;</span>
+<span class="c1"># KT Rolster -----                                   &gt;</span>
+<span class="c1">#                                       1.8          &gt;---Invictus Gaming</span>
+<span class="c1"># Team Liquid ----                                   &gt;</span>
+<span class="c1">#     .16         &gt;---Liquid---                      &gt;</span>
+<span class="c1"># Fnatic ---------             &gt;                     &gt;</span>
+<span class="c1">#                      24.2    &gt;-----PV Buffalo------</span>
+<span class="c1"># Cloud 9 --------             &gt;</span>
+<span class="c1">#     16.2        &gt;-PV Buffalo-</span>
+<span class="c1"># PV Buffalo -----</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
