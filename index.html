@@ -13181,12 +13181,12 @@ div#notebook {
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Requirement already satisfied: statsmodels in c:\users\daniel briggs\appdata\local\programs\python\python36-32\lib\site-packages
-Requirement already satisfied: pandas in c:\users\daniel briggs\appdata\local\programs\python\python36-32\lib\site-packages (from statsmodels)
 Requirement already satisfied: patsy in c:\users\daniel briggs\appdata\local\programs\python\python36-32\lib\site-packages (from statsmodels)
-Requirement already satisfied: python-dateutil&gt;=2.5.0 in c:\users\daniel briggs\appdata\local\programs\python\python36-32\lib\site-packages (from pandas-&gt;statsmodels)
-Requirement already satisfied: numpy&gt;=1.9.0 in c:\users\daniel briggs\appdata\local\programs\python\python36-32\lib\site-packages (from pandas-&gt;statsmodels)
-Requirement already satisfied: pytz&gt;=2011k in c:\users\daniel briggs\appdata\local\programs\python\python36-32\lib\site-packages (from pandas-&gt;statsmodels)
+Requirement already satisfied: pandas in c:\users\daniel briggs\appdata\local\programs\python\python36-32\lib\site-packages (from statsmodels)
 Requirement already satisfied: six in c:\users\daniel briggs\appdata\local\programs\python\python36-32\lib\site-packages (from patsy-&gt;statsmodels)
+Requirement already satisfied: numpy&gt;=1.4 in c:\users\daniel briggs\appdata\local\programs\python\python36-32\lib\site-packages (from patsy-&gt;statsmodels)
+Requirement already satisfied: python-dateutil&gt;=2.5.0 in c:\users\daniel briggs\appdata\local\programs\python\python36-32\lib\site-packages (from pandas-&gt;statsmodels)
+Requirement already satisfied: pytz&gt;=2011k in c:\users\daniel briggs\appdata\local\programs\python\python36-32\lib\site-packages (from pandas-&gt;statsmodels)
 </pre>
 </div>
 </div>
@@ -13334,7 +13334,7 @@ You should consider upgrading via the &#39;python -m pip install --upgrade pip&#
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3>Data Tidying and Modification</h3><p>Now that all our data is read in and stored, we want to parse through it to get each team's data. Due to the way the website provides the information, several parsers are needed depending on the page. Data parsing and tidying, given the large amount of data needed and the numerous steps to modify and tidy it in the dataframes, is a significant part of our project. Tidied data will make the linear regression portion of our project much easier, so we spent a lot of time prepping the data.</p>
 <p>The first thing we looked at was the match data. We went through, getting the team's data, inserting NaN, a variable for non existant values, in place of empty or missing data slots, and disgarding unnecessary rows before we stored the information in a final dataframe called 'matchReg.'</p>
-<p>Keep in mind that these steps may not work as the website continues to chanage their encoding and format over time.</p>
+<p>Keep in mind that these steps may not work as the website continues to change their encoding and format over time.</p>
 
 </div>
 </div>
@@ -13947,7 +13947,7 @@ You should consider upgrading via the &#39;python -m pip install --upgrade pip&#
       <td>7</td>
     </tr>
     <tr>
-      <th>1</th>
+      <th>8</th>
       <td>Team_SoloMid</td>
       <td>Bjergsen</td>
       <td>20</td>
@@ -13968,7 +13968,7 @@ You should consider upgrading via the &#39;python -m pip install --upgrade pip&#
       <td>14</td>
     </tr>
     <tr>
-      <th>12</th>
+      <th>10</th>
       <td>100_Thieves</td>
       <td>Cody Sun</td>
       <td>20</td>
@@ -13989,7 +13989,7 @@ You should consider upgrading via the &#39;python -m pip install --upgrade pip&#
       <td>8</td>
     </tr>
     <tr>
-      <th>4</th>
+      <th>7</th>
       <td>Echo_Fox</td>
       <td>Dardoch</td>
       <td>20</td>
@@ -14010,7 +14010,7 @@ You should consider upgrading via the &#39;python -m pip install --upgrade pip&#
       <td>12</td>
     </tr>
     <tr>
-      <th>8</th>
+      <th>5</th>
       <td>FlyQuest</td>
       <td>Flame</td>
       <td>20</td>
@@ -14044,7 +14044,7 @@ You should consider upgrading via the &#39;python -m pip install --upgrade pip&#
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Lastly, because we plan to investigate how a player's position affects the winning heuristic, we needed to assign the data of position to each player. Unfortunately, the data read in didn't track positions, and no single table available had this data, so instead of downloading and pasing 30 separate tables for a single column, we hardcoded in the player's position.</p>
+<p>Lastly, because we plan to investigate how a player's position affects the winning heuristic, we needed to assign the data of position to each player. Unfortunately, the data read in didn't track positions, and no single table available had this data, so instead of downloading and pasing 30 separate tables for a single column, we hardcoded in the player's position. The resulting table below shows the player's position in the right-most column.</p>
 <p>There are five possible positions: Top, JG (jungler), Mid (Mid-Lane), ADC (Marksman/AD Carry), or Supp (Support). Each position is responsible for doing performing different roles during the game, but you can learn about the role of each position <a href="https://www.lol-smurfs.com/blog/lol-roles-explained/">here.</a></p>
 
 </div>
@@ -14193,7 +14193,7 @@ You should consider upgrading via the &#39;python -m pip install --upgrade pip&#
       <td>Supp</td>
     </tr>
     <tr>
-      <th>1</th>
+      <th>8</th>
       <td>Team_SoloMid</td>
       <td>Bjergsen</td>
       <td>20</td>
@@ -14215,7 +14215,7 @@ You should consider upgrading via the &#39;python -m pip install --upgrade pip&#
       <td>Mid</td>
     </tr>
     <tr>
-      <th>12</th>
+      <th>10</th>
       <td>100_Thieves</td>
       <td>Cody Sun</td>
       <td>20</td>
@@ -14237,7 +14237,7 @@ You should consider upgrading via the &#39;python -m pip install --upgrade pip&#
       <td>ADC</td>
     </tr>
     <tr>
-      <th>4</th>
+      <th>7</th>
       <td>Echo_Fox</td>
       <td>Dardoch</td>
       <td>20</td>
@@ -14259,7 +14259,7 @@ You should consider upgrading via the &#39;python -m pip install --upgrade pip&#
       <td>JG</td>
     </tr>
     <tr>
-      <th>8</th>
+      <th>5</th>
       <td>FlyQuest</td>
       <td>Flame</td>
       <td>20</td>
@@ -14744,7 +14744,7 @@ You should consider upgrading via the &#39;python -m pip install --upgrade pip&#
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3> Analyzing Champion Data </h3><p>Now that all our data is ready, we can start analyzing champion data to see if we can predict win rate with champion statistics like KDA (Kill Death Assist Ratio). League of Legends also allows players to ban certain champions at the start of every game. It would be interesting to see if we can predict whether a champion will be banned with the same champion statistics, so we will analyze that as well.</p>
 <p>Let's start with analyzing the ban rate. First let's pick some of the most important statistics in our data, and perform a T-test between each statistic and the ban rate and see if there is a possible linear relationship. We will also plot the points on a chart to verify if a linear relationship exists or not.</p>
-<p>First we will convert our champs data to float format to help with the T-tests. Then We will start analyzing statistics with KDA. KDA is measured as $\frac{Kills + \frac{Assists}{3}}{Deaths}$ so it rewards kills and assists with the appropriate weights. It is recognized as a relatively good indicator of how well a player does in the game, so we would expect a champion that typically gets a high KDA to be banned a lot, as the high KDA means the champion is likely to do well.</p>
+<p>First we will convert our champs data to float format to help with the T-tests. We will start analyzing statistics with KDA. KDA is measured as $\frac{Kills + \frac{Assists}{3}}{Deaths}$ so it rewards kills and assists with the appropriate weights. It is recognized as a relatively good indicator of how well a player does in the game, so we would expect a champion that typically gets a high KDA to be banned a lot, as the high KDA means the champion is likely to do well.</p>
 
 </div>
 </div>
@@ -14813,7 +14813,7 @@ You should consider upgrading via the &#39;python -m pip install --upgrade pip&#
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&lt;matplotlib.lines.Line2D at 0x1d35c830&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x1ba737f0&gt;]</pre>
 </div>
 
 </div>
@@ -14902,7 +14902,7 @@ You should consider upgrading via the &#39;python -m pip install --upgrade pip&#
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&lt;matplotlib.lines.Line2D at 0x1ba8e270&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x1c93a290&gt;]</pre>
 </div>
 
 </div>
@@ -14991,7 +14991,7 @@ You should consider upgrading via the &#39;python -m pip install --upgrade pip&#
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&lt;matplotlib.lines.Line2D at 0x1afe3d50&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x1dd133d0&gt;]</pre>
 </div>
 
 </div>
@@ -15087,7 +15087,7 @@ dtype: float64</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&lt;matplotlib.lines.Line2D at 0x1b4f8c90&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x1c67ec30&gt;]</pre>
 </div>
 
 </div>
@@ -15114,7 +15114,7 @@ dtype: float64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Surprisingly, neither CSPM or GPM are linearly related to ban rate either, as indicated by their high p values and the shape of their plots when compared to ban rate. This indicates that players don't consider champions ability to farm gold when choosing who to ban.</p>
+<p>Neither CSPM nor GPM were linearly related to ban rate, as indicated by their high p values and the shape of their plots when compared to ban rate. This indicates that players don't consider champions ability to farm gold when choosing who to ban.</p>
 <p>Now that we have exhausted most of the variables we thought were linearly related to ban rate, let's try analyzing the win rate of champions and see if that is linearly related to ban rate.</p>
 
 </div>
@@ -15176,7 +15176,7 @@ dtype: float64</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&lt;matplotlib.lines.Line2D at 0x1d166af0&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x1c6339f0&gt;]</pre>
 </div>
 
 </div>
@@ -15256,7 +15256,7 @@ dtype: float64</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&lt;matplotlib.lines.Line2D at 0x1dac6810&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x1bdc8eb0&gt;]</pre>
 </div>
 
 </div>
@@ -15345,7 +15345,7 @@ dtype: float64</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&lt;matplotlib.lines.Line2D at 0x1c5d9ab0&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x1d25cdf0&gt;]</pre>
 </div>
 
 </div>
@@ -15433,7 +15433,7 @@ dtype: float64</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&lt;matplotlib.lines.Line2D at 0x1d325cd0&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x1bcc3bd0&gt;]</pre>
 </div>
 
 </div>
@@ -15513,7 +15513,7 @@ dtype: float64</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&lt;matplotlib.lines.Line2D at 0x1bcc18d0&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x1b338ad0&gt;]</pre>
 </div>
 
 </div>
@@ -15583,10 +15583,10 @@ dtype: float64</pre>
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   23.20</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Tue, 11 Dec 2018</td> <th>  Prob (F-statistic):</th> <td>1.77e-08</td>
+  <th>Date:</th>             <td>Fri, 14 Dec 2018</td> <th>  Prob (F-statistic):</th> <td>1.77e-08</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>00:21:52</td>     <th>  Log-Likelihood:    </th> <td> -336.91</td>
+  <th>Time:</th>                 <td>13:33:13</td>     <th>  Log-Likelihood:    </th> <td> -336.91</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>    74</td>      <th>  AIC:               </th> <td>   679.8</td>
@@ -15694,7 +15694,7 @@ dtype: float64</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&lt;matplotlib.lines.Line2D at 0x1bd2bed0&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x1c27a790&gt;]</pre>
 </div>
 
 </div>
@@ -16224,7 +16224,7 @@ Support - 7<br></p>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># This will show us the variance score, what variables it included and what the weights are for them.</span>
-<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">coef</span><span class="p">)):</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Var: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">best</span><span class="p">[</span><span class="n">x</span><span class="p">]))</span> <span class="c1"># Print variance</span>
     <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">coef</span><span class="p">[</span><span class="n">x</span><span class="p">])):</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">bestLs</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">coef</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]))</span> <span class="c1"># Print column value and it&#39;s weight</span>
@@ -16286,159 +16286,6 @@ Gold: 31.534933434541003
 Gold Share: -14.6649990835399
 CS: -1.2878069492209019
 CSPM: 35.60175791392126
-
-Var: 0.9319499725358641
-KDA: 2.0981173488186147
-GPM: 0.5931913098159041
-Kill Participation: 0.38643139247656566
-Kills: -5.463628110764224
-Gold: 12.532377120559227
-Gold Share: -14.218261614081294
-CS: -0.4494482920411722
-CSPM: 8.511309838882678
-
-Var: 0.93170770815286
-KDA: -1.4127120049005975
-GPM: 0.14914043949463252
-Kills: -4.674358761811766
-Deaths: -6.228790465505703
-Gold: 31.283551352126157
-Gold Share: -12.632770115611477
-CS: -1.2391225947126632
-CSPM: 26.16069318885217
-
-Var: 0.9317070602083923
-Kill Participation: 0.38274864742421055
-Kills: -4.329570466573322
-Deaths: -4.182927785005313
-Gold: 32.23021500792593
-Gold Share: -13.781807546888775
-CS: -1.3281681665403
-CSPM: 33.894118298687665
-
-Var: 0.9313531600644466
-KDA: -3.8437810171228426
-Kill Participation: 0.5386452629582497
-Kills: -2.625974777949085
-Deaths: -8.959594932793369
-Gold: 35.156528757136684
-Gold Share: -14.974884979730598
-CS: -1.4500314537699805
-CSPM: 35.282577456709305
-
-Var: 0.9304477283207693
-GPM: 0.6668264897908179
-Kill Participation: 0.4642222611103744
-Kills: -4.131777464707637
-Deaths: -4.543869769306613
-Gold: 11.121800324590073
-Gold Share: -13.402685261704413
-CS: -0.39608206898741494
-CSPM: 3.5956575967272095
-
-Var: 0.9302708618905703
-KDA: -3.5186821363110248
-GPM: 0.524208578717763
-Kill Participation: 0.5895082526798188
-Kills: -2.614571397239257
-Deaths: -8.839339816490316
-Gold: 18.31518734907515
-Gold Share: -14.57593972856015
-CS: -0.7069888837824219
-CSPM: 11.346785067449677
-
-Var: 0.9219844156196753
-KDA: -0.8526788319931948
-GPM: 0.4114390546854456
-Kill Share: 2.014891761070822
-Kills: -14.689983720094805
-Deaths: -4.468266156471455
-Assists: 1.9019850595114005
-Gold: 26.26314786332771
-Gold Share: -17.839969046920064
-CS: -1.0591009427767233
-CSPM: 22.275057988657736
-
-Var: 0.9182609853827766
-GPM: 0.44130874140229015
-Kill Share: 1.9928270301232696
-Kills: -14.960259792957478
-Deaths: -3.386194079789576
-Assists: 1.5245975985254796
-Gold: 25.212604301912304
-Gold Share: -17.801182445090724
-CS: -1.0141588124382455
-CSPM: 20.99011281105103
-
-Var: 0.9120437737577985
-Kill Share: 2.1765858603320125
-Kills: -16.61634346841423
-Assists: 1.2589709950156613
-Gold: 41.35510103133276
-Gold Share: -21.138207899289426
-CS: -1.709826720420276
-CSPM: 45.99819133895313
-
-Var: 0.911094817167003
-Kill Share: 1.536134792483111
-Kill Participation: 0.18764712132315706
-Kills: -12.566391015573974
-Deaths: -3.1955881518548357
-Gold: 39.28154581530465
-Gold Share: -18.20430266241414
-CS: -1.6410817744544042
-CSPM: 41.081926165743184
-
-Var: 0.9109827318867441
-GPM: 0.10773355896541079
-Kills: -5.55216640798494
-Deaths: -4.238090592991222
-Assists: -1.7406968851442541
-Gold: 34.89269980375168
-Gold Share: -13.409999846699328
-CS: -1.3938953303003947
-CSPM: 29.546079183506347
-
-Var: 0.9105455599369429
-GPM: 0.3058887078816221
-Kill Share: 1.6948323623121015
-Kills: -13.780417754377428
-Deaths: -3.352840173664952
-Gold: 31.53360753786412
-Gold Share: -17.815489538486197
-CS: -1.2792036484556348
-CSPM: 27.26996358688967
-
-Var: 0.9104368070288523
-KDA: 0.10765807924652607
-GPM: 0.11197118517901328
-Kills: -5.599443100274682
-Deaths: -4.100278727350862
-Assists: -1.7837806138960557
-Gold: 34.74652734669141
-Gold Share: -13.411241335716408
-CS: -1.3876901466629783
-CSPM: 29.37188296556964
-
-Var: 0.909595880289443
-KDA: 0.4516121084838735
-GPM: 0.3394628243893769
-Kill Share: 1.722213984591423
-Kills: -14.078247273524832
-Deaths: -2.7841052117061142
-Gold: 30.148496601311418
-Gold Share: -17.793070933328075
-CS: -1.2206523866351584
-CSPM: 25.766099580258597
-
-Var: 0.9093180368524223
-Kills: -5.568238229951092
-Deaths: -4.167280361822465
-Assists: -1.8019029926706702
-Gold: 38.35703454314877
-Gold Share: -13.54914474477006
-CS: -1.5476798499654945
-CSPM: 34.54709818670554
 
 </pre>
 </div>
@@ -17127,7 +16974,7 @@ and add that in as a factor, because it would make the model slightly better.</p
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Africa Freecs --</span>
@@ -17157,7 +17004,7 @@ and add that in as a factor, because it would make the model slightly better.</p
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">matchup2</span><span class="p">(</span><span class="s1">&#39;Freecs&#39;</span><span class="p">,</span> <span class="s1">&#39;Cloud9&#39;</span><span class="p">))</span>
@@ -17288,7 +17135,7 @@ between were in the 13-30 range.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Africa Freecs --</span>
@@ -17317,7 +17164,7 @@ between were in the 13-30 range.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">matchup2</span><span class="p">(</span><span class="s2">&quot;Cloud9&quot;</span><span class="p">,</span><span class="s2">&quot;Fnatic&quot;</span><span class="p">))</span>
@@ -17396,7 +17243,7 @@ correct. However, it is important to note our model had Cloud9 winning by only 8
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">matchup2</span><span class="p">(</span><span class="s2">&quot;Cloud9&quot;</span><span class="p">,</span> <span class="s2">&quot;Invictus_Gaming&quot;</span><span class="p">))</span>
@@ -17504,7 +17351,7 @@ margin compared to some of the numbers we've been getting, and that makes sense 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Flash Wolves ---</span>
@@ -17543,26 +17390,19 @@ metric, Fnatic almost beat Team Liquid; only losing by .16 instead of 2.16.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1><center>Conclusion and Followup</center></h1><p>Overall, our model did pretty well considering the small amount of data we added in. We could have expanded this and included
-data from every region, not just the ones that made it to worlds, and we could have added data from the spring split for
-those regions.</p>
+<h1><center>Conclusion and Followup</center></h1><p>Overall, our model did pretty well considering the small amount of data we added in, using just the most recent summer-season data. We could have expanded this and included data from every region, not just the ones that made it to worlds, and we could have added data from the spring split for those regions.</p>
 <p>We also saw the importance of a strength of schedule metric that ended up being the deciding factor for some
 close games. We did a very simple metric of just ranking regions 1-6 and taking the difference. This could've been done with
 regression to figure out the weights for the difference to see how important it is, and we could've done some ML to
 determine the rankings of each region, rather than doing it heuristically.</p>
-<p>With all of these factors in mind, it's pretty
-impressive that the model worked as well as it did. We only looked at player data, and for each player we only used a portion
-of their stats that the model told us to use. For some of the positions, ADC especially, these results were very counter
-intuitive, like having kills and gold share be negatively weighed. Despite this, we trusted the model and went ahead with the
-calculations and still predicted the winner of worlds correctly, even when we used our results from the group-stage that
+<p>With all of these factors in mind, it's pretty impressive that the model worked as well as it did. We only looked at player data, and for each player we only used a portion of their stats that the model told us to use. For some of the positions, ADC especially, these results were very counter intuitive, like having kills and gold share be negatively weighed. Despite this, we trusted the model and went ahead with the calculations and still predicted the winner of worlds correctly, even when we used our results from the group-stage that
 weren't very good.</p>
 <p>Therefore, we can see our conclusions that top-laners and junglers should value assists and gold more than kills have some validity as those statistics were the reason we were able to predict the results of worlds at a relatively high accuracy. There is also reason to conclude that ADC's and Mids should play a more cautious game since our model highlighted that their death amount should be very low. This could be because ADC's and Mids are two of the most important positions in the game and when they are dead they are not able to impact the game or generate any gold to help bolster their equipment.</p>
-<p>followup----</p>
-<p>This model could easily be updated with new data as the tournament progressed too, hopefully making it more accurate.
-For example, after the group stage you could add that player data to your existing data and be able to better predict the
-eliminiation round.</p>
-<p>Look up reference for this-&gt; Another popular metric people use is having the data be weighed chronologically, where more recent
-data is more important than older data. This could be another addition to make the model even better.</p>
+<p>Going forward, this model could easily be updated with new data to make it more accurate. For example, after the group stage you could add that player data to your existing data and be able to better predict the eliminiation round. It would also be wise to find a cohesive source of player position data to save from hardcoding in the positions as teams change players.</p>
+<p>Another popular metric people use is having the data be weighed chronologically, where more recent
+data is more important than older data. In theory, you would be able provide a weight that says how important a dataframe row is in your heuristic. Features such as decay parameter limits older data into having a lesser effect on the training in machine learning. Doing this would also potentially improve the accuracy of our model.</p>
+<p>League of Legends remians one of the most played online games, with <a href="https://fantasy.na.lolesports.com/en-US">fantasy leagues</a> and large public interest in game predictions. However, bot training and game prediction has been up-and-coming more and more recently. This may be due to machine learning becoming a more popular area in schools among the major demographic of the games. Whatever the reason, we believe this data is something both interesting and resourceful to those playing or interested in the game. We were able to accomplish a lot using the knowledge from our semester in 320 to tidy, manipulate, train, and analyze our data. More than just providing data for league learning, our process through data science is applicable to other games for independent analysis by any reader. We hope this tutorial has sparked an interest in and provided a foundation for your journey in data science!</p>
+<p>For some other cool projects about league, check out the following links on <a href="https://towardsdatascience.com/ai-in-video-games-improving-decision-making-in-league-of-legends-using-real-match-statistics-and-29ebc149b0d0">using AI to improve decision making in league</a>, and <a href="https://data-speaks.luca-d3.com/2017/05/machine-learning-to-analyze-league-of.html">analyzing league with machine learning.</a></p>
 
 </div>
 </div>
